@@ -1,11 +1,14 @@
 <h2>My Heroes</h2>
 
 <div>
-  <label for="new-hero">Hero name: </label>
-  <input id="new-hero" #heroName/>
+  <label for="name">Name: </label>
+  <input id="name" placeholder="name" #heroName/>
+  <label for="level">Level: </label>
+  <input id="level" placeholder="level (1-10)" #heroLevel/>
 
   <!-- (click) passes input value to add() and then clears the input -->
-  <button type="button" class="add-button" (click)="add(heroName.value); heroName.value=''">
+  <button type="button" class="add-button"
+          (click)="add(heroName.value, heroLevel.value); heroName.value=''; heroLevel.value = ''">
     Add hero
   </button>
 </div>
@@ -13,7 +16,7 @@
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
     <a routerLink="/heroes/{{hero.id}}">
-      <span class="badge">{{hero.id}}</span> {{hero.name}}
+      <span class="badge">{{hero.id}}</span> {{hero.name}} (Level {{hero.level}})
     </a>
     <button type="button" class="delete" title="delete hero"
             (click)="delete(hero)">x

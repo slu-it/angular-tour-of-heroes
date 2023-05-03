@@ -1,9 +1,11 @@
 <div *ngIf="hero">
-  <h2>{{hero.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{hero.id}}</div>
+  <h2>{{hero.name | uppercase}} (#{{hero.id}}) Details</h2>
   <div>
-    <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+    <label for="name">Name: </label>
+    <input id="name" [(ngModel)]="hero.name" placeholder="name">
+    <br>
+    <label for="level">Level: </label>
+    <input id="level" [(ngModel)]="hero.level" placeholder="level (1-10)">
   </div>
 </div>
 <button type="button" (click)="goBack()">go back</button>

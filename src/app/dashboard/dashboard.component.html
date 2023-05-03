@@ -1,8 +1,7 @@
-<h2>Top Heroes</h2>
+<h2>Top 3 Heroes</h2>
 <div class="heroes-menu">
-  <a *ngFor="let hero of heroes"
-     routerLink="/heroes/{{hero.id}}">
-    {{hero.name}}
+  <a *ngFor="let hero of heroes" routerLink="/heroes/{{hero.id}}">
+    {{hero.name}} (Level {{hero.level}})
   </a>
 </div>
 
